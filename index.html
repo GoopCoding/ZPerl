@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZPerl Demo</title>
+</head>
+<body>
+  <h1>ZPerl Demo</h1>
+  <div id="app"></div>
+  <script src="zperl.js"></script>
+  <script src="parser.js"></script>
+  <script src="runtime.js"></script>
+  
+  <script>
+    const zperlCode = `
+      <!Z.P>
+      component HelloWorld {
+          text "Hello from ZPerl!";
+          onClick => {
+              alert("Hello, world!");
+          }
+      }
+    `;
+    const jsCode = transpile(zperlCode);
+    eval(jsCode);
+  </script>
+</body>
+</html>
